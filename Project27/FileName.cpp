@@ -2,13 +2,16 @@
 using namespace std;
 
 void displayRun(int values[], int size);
+bool hasRun(int values[], int size);
 
 int main(void) {
 	srand(time(0));
 
-	int nums[] = { 1,2,2,2,5,6,6,8,9 };
+	int nums[] = { 1,2,3,4,5,6,7,8,9};
 
 	displayRun(nums, 9);
+
+	cout << "\n" << hasRun(nums, 9);
 
 }
 
@@ -33,4 +36,18 @@ void displayRun(int values[], int size) {
 		cout << " " << values[i] << " ";
 
 	}
+}
+
+bool hasRun(int values[], int size) {
+
+	bool hasRun = false;
+
+	for (int i = 0; i < size; i++) {
+
+		if (values[i] == values[i + 1]) { hasRun = true; }
+
+	}
+
+	return hasRun;
+
 }
