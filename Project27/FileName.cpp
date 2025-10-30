@@ -7,11 +7,25 @@ bool hasRun(int values[], int size);
 int main(void) {
 	srand(time(0));
 
-	int nums[] = { 1,2,3,4,5,6,7,8,9};
+	bool runFound = false;
 
-	displayRun(nums, 9);
+	while (!runFound) {
 
-	cout << "\n" << hasRun(nums, 9);
+		int rolls[20];
+
+		for (int i = 0; i < 20; i++) {
+			rolls[i] = rand() % 10;
+		}
+
+		if (hasRun(rolls, 20)) {
+
+			runFound = true;
+			displayRun(rolls, 20);
+
+		}
+	}
+
+
 
 }
 
